@@ -1,29 +1,26 @@
 import type { ChangeEvent } from "react"
 
 interface Props {
-    onChange: (event: ChangeEvent<HTMLInputElement>) => void 
+    frontLabel: string,
+    defaultCheckedIndex: number,
+    values: string[],
+    onChange: (event: ChangeEvent<HTMLInputElement>) => void,
 }
 
-const Radiobutton = ( {onChange} : Props) => {
+const Radiobutton = ( {frontLabel, defaultCheckedIndex, values, onChange} : Props) => {
   return (
-    <div className="flex flex-row pt-2 flex-wrap">
-        <span className="mr-1">Character status: </span>
-        <div>
-            <input type="radio" name="radio-4" className="radio radio-primary mr-1" defaultChecked onChange={onChange} value="Any"/>
-            <label className="mr-2">Any</label>
-        </div>
-        <div>
-            <input type="radio" name="radio-4" className="radio radio-primary mr-1" onChange={onChange} value="Alive"/>
-            <label className="mr-2">Alive</label>
-        </div>
-        <div>
-            <input type="radio" name="radio-4" className="radio radio-primary mr-1" onChange={onChange} value="Dead" />
-            <label className="mr-2">Dead</label>
-        </div>
-        <div>
-            <input type="radio" name="radio-4" className="radio radio-primary mr-1" onChange={onChange} value="Unknown" />
-            <label className="mr-2">Unknown</label>
-        </div>
+    <div className="flex flex-row py-2 flex-wrap">
+        <span className="mr-1">{frontLabel} </span>
+        {values.map((value, index) => { if (index === defaultCheckedIndex) 
+            return (<div>
+                <input type="radio" name="radio-4" className="radio radio-primary mr-1" defaultChecked onChange={onChange} value={value}/>
+                <label className="mr-2">{value}</label>
+            </div>)
+            else return (<div>
+            <input type="radio" name="radio-4" className="radio radio-primary mr-1"  onChange={onChange} value={value}/>
+            <label className="mr-2">{value}</label>
+        </div>)
+         })}
     </div>
     
   )
