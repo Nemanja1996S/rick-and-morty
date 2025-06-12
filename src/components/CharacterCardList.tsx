@@ -1,9 +1,6 @@
+import type { Character } from "../services/character-service"
 import CharacterCard from "./CharacterCard"
 
-interface Character {
-    name: string,
-    imgSrc: string
-}
 
 interface Props {
     characterArray: Character[]
@@ -13,7 +10,7 @@ const CharacterCardList = ( {characterArray}: Props ) => {
   return (
     <div className="grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {characterArray.map(character =>
-             <CharacterCard key={character.name} characterName={character.name} imgSrc={character.imgSrc} />
+             <CharacterCard key={character.name} characterName={character.name} imgSrc={character.image} />
         )}
     </div>
   )

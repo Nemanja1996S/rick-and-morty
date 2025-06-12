@@ -8,7 +8,7 @@ const CharacterCard = ({imgSrc, characterName} : Props) => {
     <div className="card bg-base-100 flex shadow-sm">
         <figure className="shrink-1">
             <img
-            className="shrink"
+            className="shrink w-full"
             src={imgSrc}
             alt={characterName} />
         </figure>

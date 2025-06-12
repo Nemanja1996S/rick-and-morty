@@ -7,7 +7,7 @@ interface Props {
 
 const Toolbar = ( {onChange} : Props) => {
   return (
-    <div className='flex flex-row justify-between align-middle min-h-40px px-4' >
+    <div className='flex flex-row justify-between align-middle min-h-40px px-4 py-2 bg-white' >
         <img src={img} alt="rick_and_morty_icon" className='h-10 w-10 mr-1' />
         <input type="text" placeholder="Search" className="input input-neutral max-w-36 sm:max-w-none" onChange={onChange} />
     </div>
