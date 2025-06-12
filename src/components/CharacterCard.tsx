@@ -5,7 +5,7 @@ interface Props {
 
 const CharacterCard = ({imgSrc, characterName} : Props) => {
   return (
-    <div className="card bg-base-100 max-w-96 flex shadow-sm">
+    <div className="card bg-base-100 flex shadow-sm">
         <figure className="shrink-1">
             <img
             className="shrink"

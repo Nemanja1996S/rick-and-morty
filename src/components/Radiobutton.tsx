@@ -12,11 +12,11 @@ const Radiobutton = ( {frontLabel, defaultCheckedIndex, values, onChange} : Prop
     <div className="flex flex-row py-2 flex-wrap">
         <span className="mr-1">{frontLabel} </span>
         {values.map((value, index) => { if (index === defaultCheckedIndex) 
-            return (<div>
+            return (<div key={value}>
                 <input type="radio" name="radio-4" className="radio radio-primary mr-1" defaultChecked onChange={onChange} value={value}/>
                 <label className="mr-2">{value}</label>
             </div>)
-            else return (<div>
+            else return (<div key={value}>
             <input type="radio" name="radio-4" className="radio radio-primary mr-1"  onChange={onChange} value={value}/>
             <label className="mr-2">{value}</label>
         </div>)

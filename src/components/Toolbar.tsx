@@ -1,5 +1,5 @@
 import type { ChangeEvent } from 'react'
-import img from '../assets/rick_and_morty.webp'
+import img from '../assets/rick_and_morty.svg'
 
 interface Props {
     onChange: (event: ChangeEvent<HTMLInputElement>) => void
