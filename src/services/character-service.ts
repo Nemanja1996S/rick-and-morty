@@ -8,7 +8,8 @@ export interface Character {
 }
 
 export interface ApiCharacterObject {
+    info: {next : string}
     results: Character[]
 }
 
-export default create("/character")
+export default create("/character");
