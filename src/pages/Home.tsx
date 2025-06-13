@@ -27,7 +27,7 @@ const Home = () => {
     },[isLoading, hasMore]) 
 
     return (
-        <div className=" bg-gray-200 px-4">
+        <div className=" bg-gray-200 h-full px-4">
         <Toolbar onChange={(event: ChangeEvent<HTMLInputElement>) => {setName(event.target.value); setPage(1)}}/>
         <Radiobutton onChange={(event: ChangeEvent<HTMLInputElement>) => {setStatus(event.target.value); setPage(1);}} frontLabel="Character status:" defaultCheckedIndex={0} values={["Any", "Alive", "Dead", "Unknown"]}/>
         <CharacterCardList characterArray={characters} lastCardImgRef={lastCharacterCardElementRef} />

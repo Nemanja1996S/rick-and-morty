@@ -10,7 +10,7 @@ interface Props {
 const Radiobutton = ( {frontLabel, defaultCheckedIndex, values, onChange} : Props) => {
   return (
     <div className="flex flex-row py-2 pl-2 flex-wrap">
-        <span className="mr-1">{frontLabel} </span>
+        <label className="mr-1">{frontLabel} </label>
         {values.map((value, index) => { if (index === defaultCheckedIndex) 
             return (<div key={value}>
                 <input type="radio" name="radio-4" className="radio radio-primary mr-1" defaultChecked onChange={onChange} value={value}/>
