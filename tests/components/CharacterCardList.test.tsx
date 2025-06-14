@@ -1,8 +1,7 @@
-import { it, expect, describe, vitest } from 'vitest';
+import { it, expect, describe } from 'vitest';
 import { render, screen } from "@testing-library/react";
 import CharacterCardList from "../../src/components/CharacterCardList";
 import "@testing-library/jest-dom/vitest";
-import { useRef } from 'react';
 import { Character } from '../../src/services/character-service';
 
 describe('CharacterCardList', () => {

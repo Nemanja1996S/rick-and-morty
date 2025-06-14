@@ -15,15 +15,13 @@ const Home = () => {
       if(isLoading) return
 
       if(observer.current)
-        observer.current.disconnect()
+        observer.current.disconnect();
       observer.current = new IntersectionObserver(entries => {
         if(entries[0].isIntersecting && hasMore) {
-          setPage(prevPage => prevPage + 1)
-          console.log("Visible")
+          setPage(prevPage => prevPage + 1);
         }
       })
-      if(node) observer.current.observe(node)
-      console.log(node)
+      if(node) observer.current.observe(node);
     },[isLoading, hasMore]) 
 
     return (
