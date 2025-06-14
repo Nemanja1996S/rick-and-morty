@@ -28,7 +28,7 @@ const Home = () => {
         <Toolbar onChange={(event: ChangeEvent<HTMLInputElement>) => {setName(event.target.value); setPage(1)}}/>
         <Radiobutton onChange={(event: ChangeEvent<HTMLInputElement>) => {setStatus(event.target.value); setPage(1);}} frontLabel="Character status:" defaultCheckedIndex={0} values={["Any", "Alive", "Dead", "Unknown"]}/>
         <CharacterCardList characterArray={characters} lastCardImgRef={lastCharacterCardElementRef} />
-        {isLoading && <CharacterCardSkeletonList/>}
+        {isLoading && <div role='progressbar' aria-label='Loading characters'><CharacterCardSkeletonList/></div>}
         {!isLoading && characters.length < 1 && <p className="pl-2 text-3xl">There are no results</p>}
       </div>
     )
